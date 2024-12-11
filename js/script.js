@@ -26,9 +26,19 @@ const init = function () {
 
     scoreEl.textContent = score;
     attemptEl.textContent = attempt;
+    resultEl.textContent = 'Choose a Coin Side to Start';
+    // resultEl.classList.remove('bg-[#50ff5f] text-white');
+    // resultEl.classList.remove('bg-[#ff5e5e] text-white');
+    // resultEl.classList.add('bg-white text-black');
+
+
 
     btnHeads.classList.remove('hidden');
+    btnHeads.classList.add('flex');
+
     btnTails.classList.remove('hidden');
+    btnTails.classList.add('flex');
+
     newGame.classList.add('hidden');
 
     coin.src = 'img/coin-unknown.png';
@@ -37,17 +47,19 @@ const init = function () {
 
 }
 
-
+// Initialize New Game
 init();
 
 
-
-
-
 const disableBtn = function () {
+    btnHeads.classList.remove('flex');
     btnHeads.classList.add('hidden');
+    
+    btnTails.classList.remove('flex');
     btnTails.classList.add('hidden');
+    
     newGame.classList.remove('hidden');
+    newGame.classList.add('flex');
 }
 
 const flipCoin = function (choice) {
@@ -84,6 +96,7 @@ const flipCoin = function (choice) {
         if (score == 3 && attempt != 0) {
             playing = false;
             resultEl.textContent = 'Congrats! You won the game.'
+            
             disableBtn();
         } else if (score != 3 && attempt == 0) {
             playing = false;
@@ -97,7 +110,7 @@ const flipCoin = function (choice) {
 
 
 
-// Flip Coin
+// Events
 btnHeads.addEventListener('click', () => flipCoin('heads'));
 btnTails.addEventListener('click', () => flipCoin('tails'));
 newGame.addEventListener('click', () => init());

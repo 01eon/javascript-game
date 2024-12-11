@@ -29,19 +29,18 @@ body {
 
 }
 
-.attemptFull {
-  background-image: linear-gradient(to bottom, 
-  #252525 0%, 
-  #313131 100%
-  );
+.result--container, .player--container{
+  
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.player0BG {
-  background-image: linear-gradient(to bottom right, #37c015, #84ec6a);
+.result--container { 
+  background-image: url('../img/bg-texture.png');
 }
 
-.player1BG {
-  background-image: linear-gradient(to bottom right, #f15e8b, #ff8cae);
+.player--container { 
+  background-image: url('../img/bg-player-texture.png');
 }
 
 

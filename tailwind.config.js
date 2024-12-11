@@ -30,7 +30,7 @@ module.exports = {
     },
     extend: {
       colors:{
-        blue: '#ffeeca'
+        
       },
     },
   },

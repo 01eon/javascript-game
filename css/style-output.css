@@ -570,16 +570,6 @@ video {
   margin-bottom: 1rem;
 }
 
-.my-2{
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.my-6{
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
 .flex{
   display: flex;
 }
@@ -668,6 +658,26 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#fff\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#ff5e5e\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 94 94 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#5eff6c\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(94 255 108 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#50ff5f\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(80 255 95 / var(--tw-bg-opacity, 1));
+}
+
 .p-2{
   padding: 0.5rem;
 }
@@ -680,19 +690,14 @@ video {
   padding: 1.5rem;
 }
 
-.py-4{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
 
 .text-center{
@@ -779,19 +784,17 @@ body {
   );
 }
 
-.attemptFull {
-  background-image: linear-gradient(to bottom, 
-  #252525 0%, 
-  #313131 100%
-  );
+.result--container, .player--container{
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.player0BG {
-  background-image: linear-gradient(to bottom right, #37c015, #84ec6a);
+.result--container {
+  background-image: url('../img/bg-texture.png');
 }
 
-.player1BG {
-  background-image: linear-gradient(to bottom right, #f15e8b, #ff8cae);
+.player--container {
+  background-image: url('../img/bg-player-texture.png');
 }
 
 .hover\:bg-\[\#e4e4e4\]:hover{
