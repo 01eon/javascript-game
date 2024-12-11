@@ -1,9 +1,5 @@
 'use strict';
-
-
-let playing = true
-let score = 0;
-let attempt = 10;
+let outcome, playing, score, attempt;
 
 let scoreEl = document.querySelector('#score');
 let attemptEl = document.querySelector('#attempt');
@@ -19,17 +15,39 @@ let coinResult = document.querySelector('#coin--result');
 
 let playerContainer = document.querySelector('.player--container');
 
-
-
-
 const btnHeads = document.querySelector('#coin--heads');
 const btnTails = document.querySelector('#coin--tails');
+const newGame = document.querySelector('#new-game');
 
-let outcome;
+const init = function () {
+    playing = true
+    score = 0;
+    attempt = 10;
 
-const disableBtn = function() {
-    btnHeads.disabled = true;
-    btnTails.disabled = true;
+    scoreEl.textContent = score;
+    attemptEl.textContent = attempt;
+
+    btnHeads.classList.remove('hidden');
+    btnTails.classList.remove('hidden');
+    newGame.classList.add('hidden');
+
+    coin.src = 'img/coin-unknown.png';
+    coinResult.src = 'img/coin-unknown.png';
+    resultText.textContent = '???';
+
+}
+
+
+init();
+
+
+
+
+
+const disableBtn = function () {
+    btnHeads.classList.add('hidden');
+    btnTails.classList.add('hidden');
+    newGame.classList.remove('hidden');
 }
 
 const flipCoin = function (choice) {
@@ -54,7 +72,7 @@ const flipCoin = function (choice) {
             attempt--;
             attemptEl.textContent = attempt;
 
-        // if guessed incorrectly
+            // if guessed incorrectly
         } else {
             attempt--;
             attemptEl.textContent = attempt;
@@ -66,15 +84,13 @@ const flipCoin = function (choice) {
         if (score == 3 && attempt != 0) {
             playing = false;
             resultEl.textContent = 'Congrats! You won the game.'
+            disableBtn();
         } else if (score != 3 && attempt == 0) {
             playing = false;
             resultEl.textContent = 'Out of attempts. You lost.'
+            disableBtn();
         }
-        
 
-        
-    } else {
-        disableBtn();
     }
 }
 
@@ -84,3 +100,4 @@ const flipCoin = function (choice) {
 // Flip Coin
 btnHeads.addEventListener('click', () => flipCoin('heads'));
 btnTails.addEventListener('click', () => flipCoin('tails'));
+newGame.addEventListener('click', () => init());
