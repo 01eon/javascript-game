@@ -25,12 +25,12 @@ module.exports = {
 
     },
     fontFamily: {
-      inter: ['Inter', 'sans-serif'],
-      roboto: ['Roboto', 'sans-serif'],
+      rajdhani: ['Rajdhani', 'sans-serif'],
+
     },
     extend: {
       colors:{
-        
+        blue: '#ffeeca'
       },
     },
   },

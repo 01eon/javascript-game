@@ -1,36 +1,82 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coin Flip Challenge</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Coin Flip Challenge</h1>
-    <div>
-      <h2 id="turn">Player 1's Turn</h2>
-      <button id="heads">Heads</button>
-      <button id="tails">Tails</button>
-    </div>
-    <p id="result"></p>
-    <p>Player 1 Score: <span id="player1-score">0</span></p>
-    <p>Player 2 Score: <span id="player2-score">0</span></p>
-    <button id="reset-game">Reset Game</button>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link href="/css/style-output.css" rel="stylesheet">
+  <title>Coin Flip</title>
 </head>
+
 <body>
-  
+  <div class="relative game-container p-4 flex gap-2 flex-col justify-center items-center h-screen">
+
+
+    <div class="flex justify-between items-center w-full">
+      <!-- Attempt -->
+      <div class="try flex flex-col w-[8rem] h-full">
+        <h2 id="attempt--text" class="bg-black text-white uppercase font-bold p-2 text-center text-[1rem]">Tries</h2>
+        <span id="attempt" class="bg-white text-black font-black p-2 text-center text-[1.5rem]">10</span>
+      </div>
+
+      <!-- Title -->
+      <h2 class="font-bold text-[2.5rem] my-1 uppercase text-white ">Guess my Coin</h2>
+
+
+
+
+      <!-- Score -->
+      <div class="score flex flex-col w-[8rem] h-full">
+        <h2 id="score--text" class="bg-black text-white uppercase font-bold p-2 text-center text-[1rem]">Score</h2>
+        <span id="score" class="bg-white text-black font-black p-2 text-center text-[1.5rem]">0</span>
+      </div>
+
+    </div>
+
+
+    <div id="result" class="w-full text-center bg-white uppercase font-bold p-4 text-[1.3rem]">yeee</div>
+
+    <!-- Game Board -->
+    <div id="gameboard" class="w-full h-[80vh] flex justify-center items-center ">
+
+      <!-- Player  Container -->
+      <div
+        class="player--container flex flex-col justify-center items-center w-full h-full p-6 outline-1 outline-dotted outline-white  duration-300">
+        <!-- Coin Image -->
+        <div class="coin--container bg-[#ecececa9]   rounded-xl h-[15rem]">
+
+          <img id="coin" src="img/coin-unknown.png" class="coin h-[15rem]" />
+        </div>
+
+        <!-- <h2 class="text-[2rem] font-bold my-4">Take a Guess</h2> -->
+        <div class="coin--option my-4">
+          <button id="coin--heads" class="border-2 border-white w-[5rem] py-2 bg-[#d4d4d4] hover:bg-[#e4e4e4]">heads</button>
+          <button id="coin--tails" class="border-2 border-white w-[5rem] py-2 bg-[#d4d4d4] hover:bg-[#e4e4e4]">tails</button>
+        </div>
+      </div>
+
+      <!-- Result Container -->
+      <div
+        class="result--container flex flex-col justify-center items-center w-full h-full p-6 outline-1 outline-dotted outline-white duration-300">
+        <!-- Coin Image -->
+        <div class="coin--container bg-[#ecececa9]   rounded-xl h-[15rem]">
+
+          <img id="coin--result" src="img/coin-unknown.png" class="coin h-[15rem]" />
+        </div>
+        <h2 id="result--text" class="text-[2rem] font-bold my-4 text-white">???</h2>
+      </div>
+
+
+
+
+      <!-- <button id="game-reset" class="border-2 border-white w-[5rem] bg-[#d4d4d4] hover:bg-[#e4e4e4]">Reset</button> -->
+
+    </div>
+  </div>
+
+
+
+  <script src="js/script.js"></script>
 </body>
+
 </html>

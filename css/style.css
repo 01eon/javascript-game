@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 * {
   margin: 0;
@@ -10,17 +11,38 @@
 }
 
 html {
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 400;
-  height: 100vh;
-  color: #333;
-  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* position: relative; */
+  /* font-family: 'Orbitron', sans-serif; */
+  /* font-family: 'Quicksand', sans-serif; */
+  font-family: 'Rajdhani', sans-serif;
+
+
+  background-image: linear-gradient(to bottom, 
+  #252525 0%, 
+  #313131 100%
+  );
+
 }
+
+.attemptFull {
+  background-image: linear-gradient(to bottom, 
+  #252525 0%, 
+  #313131 100%
+  );
+}
+
+.player0BG {
+  background-image: linear-gradient(to bottom right, #37c015, #84ec6a);
+}
+
+.player1BG {
+  background-image: linear-gradient(to bottom right, #f15e8b, #ff8cae);
+}
+
+
+
