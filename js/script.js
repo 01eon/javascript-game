@@ -1,8 +1,8 @@
 'use strict';
 let outcome, playing, score, attempt;
 
-let scoreEl = document.querySelector('#score');
-let attemptEl = document.querySelector('#attempt');
+let scoreEl = document.querySelector('.score');
+let attemptEl = document.querySelector('.attempt');
 
 
 let turnEl = document.querySelector('#turn');
@@ -49,6 +49,8 @@ const init = function () {
 
 // Initialize New Game
 init();
+
+document.body.style.backgroundColor = ''
 
 
 const disableBtn = function () {
