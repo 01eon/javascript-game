@@ -1,11 +1,12 @@
 'use strict';
 let outcome, playing, score, attempt;
 
-let scoreEl = document.querySelector('.score');
-let attemptEl = document.querySelector('.attempt');
+let scoreEl = document.querySelector('#score');
+let scoreMobileEl = document.querySelector('#scoreMobile')
+let attemptEl = document.querySelector('#attempt');
+let attemptMobileEl = document.querySelector('#attemptMobile');
 
 
-let turnEl = document.querySelector('#turn');
 let gameboard = document.querySelector('#gameboard');
 let coin = document.querySelector('#coin');
 
@@ -27,9 +28,6 @@ const init = function () {
     scoreEl.textContent = score;
     attemptEl.textContent = attempt;
     resultEl.textContent = 'Choose a Coin Side to Start';
-    // resultEl.classList.remove('bg-[#50ff5f] text-white');
-    // resultEl.classList.remove('bg-[#ff5e5e] text-white');
-    // resultEl.classList.add('bg-white text-black');
 
 
 
@@ -45,12 +43,14 @@ const init = function () {
     coinResult.src = 'img/coin-unknown.png';
     resultText.textContent = '???';
 
+    // For Testing Purposes
+    console.clear();
+    
 }
 
 // Initialize New Game
 init();
 
-document.body.style.backgroundColor = ''
 
 
 const disableBtn = function () {
@@ -83,13 +83,16 @@ const flipCoin = function (choice) {
             // Increase score
             score++;
             scoreEl.textContent = score;
+            scoreMobileEl.textContent = score;
             attempt--;
             attemptEl.textContent = attempt;
+            attemptMobileEl.textContent = attempt;
 
             // if guessed incorrectly
         } else {
             attempt--;
             attemptEl.textContent = attempt;
+            attemptMobileEl.textContent = attempt;
             resultEl.textContent = `Too bad. The coin landed on ${outcome}.`
             resultText.textContent = outcome;
         }
@@ -107,6 +110,18 @@ const flipCoin = function (choice) {
         }
 
     }
+
+    // For Testing Purposes
+    console.log('MOBILE')
+    console.log(`Attempt: ${attemptMobileEl.textContent} | Score: ${scoreMobileEl.textContent} `);
+    console.log("");
+
+    console.log('TABLET')
+    console.log(`Attempt: ${attemptEl.textContent} | Score: ${scoreEl.textContent} `);
+    console.log("");
+
+    
+
 }
 
 
